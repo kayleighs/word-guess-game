@@ -65,7 +65,7 @@ function setupRound (word) {
         word: word,
         guessesLeft: 9,
         wrongGuesses: [],
-        puzzleState: [],
+        puzzleState: getBlanks(word),
 
     }
     return round;
@@ -83,10 +83,56 @@ function updateRound (round, chosenLetter )  {
 }
  //1.7
  function hasWon (puzzleState) {
-     for (var i=0; i <puzzleState.length; i++) {
+     for (var i=0; i < puzzleState.length; i++) {
      if (puzzleState[i] === "_") {
          return false;
      }
  }  
     return true;
  }
+//1.8
+function hasLost (guessesLeft) {
+    if  (guessesLeft ===0 ) {
+        return true;
+    }
+    return false
+}
+//1.9
+function isEndOfRound (round) {
+    if (hasWon(round.puzzleState)){
+        return true;
+    }
+    if (round.guessesLeft === 0 ) {
+        return true;
+    }
+    return false
+}
+//1.10
+function setupGame (gameWords, wins, losses) {
+    var game = {
+        words:gameWords,
+        wins: wins,
+        losses: losses,
+        round: setupRound(randomWord(gameWords)),
+    }
+    return game
+}
+//1.11
+function startNewRound (game) {
+    if(hasWon(game.round.puzzleState) === true) {
+        game.wins +=1;
+        alert ("Congradtlations! You got it right! The word was "+ game.round.word);
+    }
+    else {
+        game.losses +=1;
+        alert ("Sorry! You lost! The correct word was "+ game.round.word + "!");
+    }
+    return game;
+}
+//1.12
+var myGame = setupGame(gameWords,0 , 0);
+
+//
+
+
+
