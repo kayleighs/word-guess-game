@@ -132,7 +132,7 @@ function startNewRound (game) {
 //1.12
 var myGame = setupGame(gameWords,0 , 0);
 
-//
+//Part 3
 
 
 
