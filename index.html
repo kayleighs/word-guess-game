@@ -5,35 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
-    <link rel="stylesheet" type=text/css href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="logic.js"></script>
+    <link rel="stylesheet" type=text/css href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <script src="logic.js"></script>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron">
-                    <h2>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="jumbotron p-2 ">
+                    <h1>
                         Hello, welcome to the Renaissance Artist Word Game!
-                    </h2>
+                    </h1>
                     <div>
                         You have 9 guesses! Good luck!
                     </div>
                     <p>
-                        <a class="btn btn-primary btn-large" href="#">Start</a>
+                        <a type="button" value="Refresh Page" onClick="location.href=location.href" class="btn btn-primary btn-large btn-secondary restart-button" href="#">Restart</a>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row ">
+            <div class="col-md-3 p-3 mx-auto rounded kscontainers mt-1 mb-1">
                 <h2>
                     Progress
                 </h2>
                 <div class="row">
-                    <div class="col-md-12"> 
+                    <div class="col-md-12 "> 
                         <p>Wrong Guesses: <span id="wrong-guesses" ></span></p>
                     </div>
                 </div>
@@ -44,15 +45,14 @@
                      </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 p-3 mx-auto rounded kscontainers mt-1 mb-1">
                 <h2>
                     Word
                 </h2>
                 <div><span id="puzzle-state"></span>
-
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3 p-3 mx-auto rounded kscontainers mt-1 mb-1">
                 <h2>
                     Wins/Losses
                 </h2>
@@ -66,9 +66,16 @@
                         <p>Losses: <span id="loss-counter">0</span>
                         </p>
                     </div>
-            </div>
+                </div>
+             </div>
         </div>
+
     </div>
-    
+        <div class="row text-center mt-4">
+            <div class="col-md-12">
+                <img id="progress-pic" src="./images/9.png"></img>
+            </div>
+        
+        </div>
 </body>
 </html>

@@ -1,7 +1,6 @@
 
 // 1.0
-
-var gameWords = ["michelangelo", "leonardodavinci", "boticelli", "donatello", "janvaneyck", "bosch"];
+var gameWords = ["michelangelo", "leonardodavinci", "boticelli", "donatello", "janvaneyck", "bosch","titan","giotto","hieronymusbosch","masaccio"];
 //1.1
 function randomWord(gameWords) {
     return gameWords[Math.floor(Math.random() * gameWords.length)];
@@ -15,9 +14,7 @@ function isCorrectGuess(word, letters) {
     else
         return false
 }
-
 // 1.3
-
 function getBlanks(word) {
     var puzzleState = []
     for (var i = 0; i < word.length; i++) {
@@ -25,28 +22,7 @@ function getBlanks(word) {
     }
     return puzzleState;
 };
-
 //1.4
-
-/* var chosenLetter = document.getElementById("chosenLetter");
-document.onkeyup = function (event) {
-     chosenLetter.textContent = event.key;
-} */
-/* var remainingLetters = word.length
-function fillBlanks(word, puzzleState, chosenLetter) {
-
-    if (isCorrectGuess(word, chosenLetter)){
-    for (i = 0; i < word.length; i++) {
-        if (word[i] === chosenLetter) {
-            puzzleState[i]= chosenLetter;
-            remainingLetters--;
-        }
-    }
-    return puzzleState;
-}
-
-}
-; */
 function fillBlanks(word, puzzleState, chosenLetter) {
     for (i = 0; i < word.length; i++) {
         if (word[i] == chosenLetter) {
@@ -95,13 +71,22 @@ function hasLost (guessesLeft) {
     return false
 }
 //1.9
+
+var winS = new Audio("./sounds/win2.mp3");
+
+var loseS = new Audio("./sounds/lose2.mp3");
+
 function isEndOfRound (setRound) {
     if (hasWon(setRound.puzzleState)){
+        winS.play();
         return true;
     }
     if (setRound.guessesLeft === 0 ) {
+        document.getElementById("progress-pic").src = "images/0.jpg"
+        loseS.play();
         return true;
     }
+    handPic()
     return false
 }
 //1.10
@@ -121,11 +106,13 @@ function startNewRound (game) {
         alert ("Congratulations! You got it right! The word was "+ game.round.word);
     }
     else {
-        game.losses +=1;
-        alert ("Sorry! You lost! The correct word was "+ game.round.word + "!");
+        alert("Sorry! You lost! The correct word was " + game.round.word + "!");
+        game.losses += 1;
     }
+    document.getElementById("progress-pic").src = "images/9.png"
     return game;
 }
+
 //1.12
 var myGame = setupGame(gameWords, 0 , 0);
 
@@ -165,20 +152,55 @@ document.onkeyup= function(event){
     document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
     document.getElementById("wrong-guesses").innerHTML = myGame.round.wrongGuesses;
     document.getElementById("guesses-left").innerHTML = myGame.round.guessesLeft;
-
+  
 if (isEndOfRound(myGame.round)) {
+    console.log("wait")
+    setTimeout(wait, 50);
+}
+}
+function wait() {
     myGame = startNewRound(myGame);
-    myGame.round = setupRound (randomWord(gameWords))
+    myGame.round = setupRound(randomWord(gameWords))
     updatePage()
     console.log(myGame)
 }
-}
-
 function updatePage () {
     document.getElementById("win-counter").innerHTML = myGame.wins;
     document.getElementById("loss-counter").innerHTML = myGame.losses;
     document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
     document.getElementById("wrong-guesses").innerHTML = myGame.round.wrongGuesses;
     document.getElementById("guesses-left").innerHTML = myGame.round.guessesLeft;
-
 }
+ function handPic () {
+
+    if (myGame.round.guessesLeft ===9) {
+        document.getElementById("progress-pic").src = "images/9.png"
+    }
+     if (myGame.round.guessesLeft === 8) {
+         document.getElementById("progress-pic").src = "images/8.png"
+     }
+     if (myGame.round.guessesLeft === 7) {
+         document.getElementById("progress-pic").src = "images/7.png"
+     }
+     if (myGame.round.guessesLeft === 6) {
+         document.getElementById("progress-pic").src = "images/6.png"
+     }
+     if (myGame.round.guessesLeft === 5) {
+         document.getElementById("progress-pic").src = "images/5.png"
+     }
+     if (myGame.round.guessesLeft === 4) {
+         document.getElementById("progress-pic").src = "images/4.png"
+     }
+     if (myGame.round.guessesLeft === 3) {
+         document.getElementById("progress-pic").src = "images/3.png"
+     }
+     if (myGame.round.guessesLeft === 2) {
+         document.getElementById("progress-pic").src = "images/2.png"
+     }
+     if (myGame.round.guessesLeft === 1) {
+         document.getElementById("progress-pic").src = "images/1.png"
+     }
+     if (myGame.round.guessesLeft === 0) {
+         document.getElementById("progress-pic").src = "images/0.jpg"
+     }
+} 

@@ -1,0 +1,32 @@
+body{
+    background: url("./images/seamless_paper_texture/seamless_paper_texture/seamless_paper_texture.png")
+}
+@font-face {
+    font-family: "press";
+    src: url(Press-Gutenberg.ttf)
+}
+.kscontainers {
+    background-color: rgba(255,251,245, .7);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    text-align: center
+
+}
+.jumbotron {
+    background-color: rgba(255,251,245, .7);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    text-align: center
+}
+h1 {
+    font-size: 46px;
+    font-weight: 900;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+#progress-pic {
+    width: 30%;
+
+}
