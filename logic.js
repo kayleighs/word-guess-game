@@ -1,6 +1,6 @@
 
 // 1.0
-var gameWords = ["michelangelo", "leonardodavinci", "boticelli", "donatello", "janvaneyck", "bosch","titan","giotto","hieronymusbosch","masaccio"];
+var gameWords = ["michelangelo", "leonardodavinci", "boticelli", "donatello", "janvaneyck", "bosch","titan","giotto","hieronymusbosch","masacciocomm"];
 //1.1
 function randomWord(gameWords) {
     return gameWords[Math.floor(Math.random() * gameWords.length)];
