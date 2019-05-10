@@ -1,12 +1,15 @@
 # word-guess-game
 
-<!-- TODO: add one sentence overview here of your progress -->
+Game is finished. Possibly in future add more sounds and pictures.
 
 ## Overview
 
-<!-- TODO: add a description of your assignment, theme, approach, and solution here -->
+
+The theme of this word game is Rennaissance artists. There are 9 chances to win. See how many wins you can get!
 
 ## Functionality Breakdown
-<!-- TODO: update this to your screenshot, gif, etc. demonstrating functionality. add any additional explanation below -->
-[Screenshot of Game](images/screenshot1.png)
+
+[Screenshot of Game](capture-1.png)
+[Screenshot of Game](capture-2.png)
+[Screenshot of Game](capture-3.png)
 
