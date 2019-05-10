@@ -9,7 +9,7 @@ The theme of this word game is Rennaissance artists. There are 9 chances to win.
 
 ## Functionality Breakdown
 
-[Screenshot of Game](capture-1.png)
-[Screenshot of Game](capture-2.png)
-[Screenshot of Game](capture-3.png)
+[Screenshot of Game Opening](capture-1.png)
+[Screenshot of Game Progress](capture-2.png)
+[Screenshot of Game Win](capture-3.png)
 
