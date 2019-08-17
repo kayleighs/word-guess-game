@@ -9,11 +9,11 @@ The theme of this word game is Rennaissance artists. There are 9 chances to win.
 
 ## Functionality Breakdown
 
-Game Opening
+### Game Opening
 <img src="/capture-1.PNG" width="500">
 
-Game Progress
+### Game Progress
 <img src="/capture-2.PNG" width="500">
-Game Win
+### Game Win
 <img src="/capture-3.PNG" width="500">
 
